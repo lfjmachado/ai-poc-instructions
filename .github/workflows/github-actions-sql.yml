@@ -24,4 +24,4 @@ jobs:
         pip install pyspark jq
 
     - name: Run Python script
-      run: python check_files.py
+      run: python scripts/check_files.py
