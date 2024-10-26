@@ -6,15 +6,15 @@ on:
       - feature
 
 jobs:
-  syntax-check:
-    name: Check SQL and JSON Files
+  # Job para verificar a sintaxe dos arquivos SQL
+  sql-syntax-check:
+    name: Verify SQL Syntax
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Verificar a sintaxe dos arquivos SQL para Spark SQL
     - name: Verify SQL syntax
       run: |
         for file in $(find . -name '*.sql'); do
@@ -27,7 +27,15 @@ jobs:
           fi
         done
 
-    # Verificar arquivos JSON para as chaves e valores necessários
+  # Job para validar os arquivos JSON
+  json-validation:
+    name: Validate JSON Files
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Validate JSON files
       run: |
         required_keys=("key1" "key2" "key3")
