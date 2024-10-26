@@ -1,0 +1,50 @@
+name: SQL and JSON Checks
+
+on:
+  push:
+    branches:
+      - feature
+
+jobs:
+  syntax-check:
+    name: Check SQL and JSON Files
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Verificar a sintaxe dos arquivos SQL para Spark SQL
+    - name: Verify SQL syntax
+      run: |
+        for file in $(find . -name '*.sql'); do
+          echo "Checking syntax for $file"
+          # Use spark-sql para verificar a sintaxe
+          spark-sql -e "EXPLAIN SELECT * FROM ($(<$file)) limit 1" > /dev/null
+          if [ $? -ne 0 ]; then
+            echo "Syntax error in $file"
+            exit 1
+          fi
+        done
+
+    # Verificar arquivos JSON para as chaves e valores necessários
+    - name: Validate JSON files
+      run: |
+        required_keys=("key1" "key2" "key3")
+        default_values=("default1" "default2" "default3")
+
+        for file in $(find . -name '*.json'); do
+          echo "Validating $file"
+          for key in "${required_keys[@]}"; do
+            if ! jq -e "has(\"$key\")" "$file" > /dev/null; then
+              echo "Missing key $key in $file"
+              exit 1
+            fi
+            # Verifique se o valor é preenchido com o valor padrão
+            value=$(jq -r ".\"$key\"" "$file")
+            if [ "$value" = "null" ] || [ -z "$value" ]; then
+              echo "Key $key in $file is not set"
+              exit 1
+            fi
+          done
+        done

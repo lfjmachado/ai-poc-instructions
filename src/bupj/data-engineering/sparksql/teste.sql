@@ -1,0 +1,1 @@
+select * from tbteste where 1=1
