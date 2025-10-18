@@ -1,0 +1,11 @@
+{
+  "nome_processo": "processar_dados",
+  "descricao": "Metadados do job de processamento diário de transações.",
+  "fonte": "sistema_a",
+  "schema": [
+    {"campo": "id_transacao", "tipo": "string", "chave": true},
+    {"campo": "valor", "tipo": "decimal", "unidade": "BRL"},
+    {"campo": "data_processamento", "tipo": "date"}
+  ],
+  "versao": "1.0.0"
+}
