@@ -7,7 +7,7 @@ SELECT
     t1.data_processamento,
     t2.nome_cliente
 FROM
-    dados.transacoes t1
+    dados.transacoes t
 INNER JOIN
     (
         SELECT id_cliente, nome_cliente

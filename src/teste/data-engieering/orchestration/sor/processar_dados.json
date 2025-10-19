@@ -1,0 +1,24 @@
+{
+  "domain": "teste",
+  "sub-domain": "data-engineering",
+  "dataset": "cadastro",
+  "tipo": "sparksql",
+  "table-name": "processar_dados",
+  "schedule": "0 2 * * *",
+  "SparkSql": [
+    {
+      "nome": "extrair_dados",
+      "database": "sor_teste",
+      "table": "transacoes",
+      "pushdown_predicates": "year = hoje - 1"
+    }
+  ],
+  "dependencias": [],
+  "GdqRules":{
+    "Rules":[
+      "Rowcount >0,",
+      "IsPrimaryKey 'id_transacao',",
+      "Completeness 'valor' >= 0.0"
+    ]
+  }
+}

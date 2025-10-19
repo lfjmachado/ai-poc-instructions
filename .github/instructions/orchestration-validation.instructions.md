@@ -1,6 +1,6 @@
 ---
 description: Validação RÍGIDA de Arquivos de Orquestração (Data Platform) - Garante formato, estrutura, agendamento CRON, tipo de query e conformidade com a sintaxe DQDL.
-applyTo: "src/pricing/**/orchestration/**/*.*"
+applyTo: "src/teste/**/orchestration/**/*.*"
 ---
 
 # 🛑 REVISÃO OBRIGATÓRIA DE ORQUESTRAÇÃO (ALTA PRECISÃO E RIGOR)
