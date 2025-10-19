@@ -18,3 +18,6 @@ Para todos os arquivos novos ou modificados que se enquadram em `**/scripts/*.sq
     * Verificar a eficiência de `JOIN`s, garantindo que os campos de união estejam corretamente indexados ou sejam de tipos de dados compatíveis, e que o tipo de JOIN seja o mais eficiente para a operação (ex: preferir `INNER JOIN` a `FULL OUTER JOIN` quando possível).
     * Alertar sobre o uso de funções que possam causar a varredura completa da tabela (`full scan`) sem necessidade de filtros eficientes.
     * Recomendar a aplicação de filtros (cláusula `WHERE`) o mais cedo possível para reduzir o volume de dados a serem processados.
+3. **Otimização de Query (Obrigatório):**
+   * **Revisar consultas com subqueries complexas ou repetidas e sugerir o uso de Common Table Expressions (CTEs) (cláusula WITH) para melhor legibilidade e potencial otimização, conforme exigido pelo TIME-DATA-PLATFORM.** * Verificar a eficiência de JOINs.
+   * Alerte se a query não for escalável, **pois o TIME-DATA-PLATFORM exige otimização máxima.**
