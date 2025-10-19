@@ -1,0 +1,27 @@
+{
+  "domain": "teste",
+  "sub-domain": "data-engineering",
+  "dataset": "cadastro",
+  "write-mode": "append",
+  "zone": "sor",
+  "table-name": "processar_dados",
+  "description": "Metadados do job de processamento diário de transações.",
+  "DataControl": "sistema_a",
+  "PartitionColumn": "data_processamento",
+  "Columns": [
+    {
+      "campo": "id_transacao",
+      "tipo": "string",
+      "chave": true
+    }
+    {
+      "campo": "valor",
+      "tipo": "decimal",
+      "unidade": "BRL"
+    },
+    {
+      "campo": "data_processamento",
+      "tipo": "date"
+    }
+  ]
+}

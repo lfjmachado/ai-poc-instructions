@@ -1,6 +1,6 @@
 ---
 description: Validação RÍGIDA de Integridade Cross-File (Orquestração, Metadados e SQL) para garantir a compatibilidade do pipeline Data Platform.
-applyTo: "src/pricing/**/orchestration/**/*.*"
+applyTo: "src/teste/**/orchestration/**/*.*"
 ---
 
 # 🔗 VALIDAÇÃO DE INTEGRIDADE CROSS-FILE (BLOQUEIO OBRIGATÓRIO)

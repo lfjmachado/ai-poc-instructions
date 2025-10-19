@@ -1,6 +1,6 @@
 ---
 description: Validação RÍGIDA de Metadados (Data Platform) - Garante conformidade de formato, estrutura, regras de negócio e coexistência.
-applyTo: "src/pricing/**/metadata/**/*.*"
+applyTo: "src/teste/**/metadata/**/*.*"
 ---
 
 # 🚨 REVISÃO OBRIGATÓRIA DE METADADOS (TIME-DATA-PLATFORM)
