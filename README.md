@@ -1,11 +1,3 @@
-Com base na descrição do seu projeto (PoC para Code Review em Plataforma de Dados usando IA), aqui está um modelo de arquivo `README.md` estruturado para o seu repositório `teste-gitactions`.
-
-Este `README.md` destaca o uso do GitHub Copilot para automação da qualidade do código e obedece aos padrões de documentação de projeto.
-
------
-
-# 🤖 **teste-gitactions**
-
 ## **PoC: Automação de Code Review e Qualidade de Código com GitHub Copilot**
 
 Este repositório serve como uma Prova de Conceito (PoC) para demonstrar a aplicação de Inteligência Artificial, via **GitHub Copilot**, na automação e padronização do processo de *Code Review* para a Plataforma de Dados (Data Platform).
